@@ -1,4 +1,10 @@
 .venv/
+env/
 __pycache__/
 chromadb/
 context_data/
+
+# Environment files and secrets
+.env
+.env.*
+!.env.example

@@ -50,7 +50,7 @@ if __name__ == "__main__":
 # when run as a script, run some tests to demonstrate capabilities
 #    docs = retriever.invoke("What is Ryan Calais Cameron's most recent play?")
 #    print(f"Found {len(docs)} documents:")
-
+#
 #    for doc in docs:
 #        print("-----")
 #        print(doc)
@@ -61,7 +61,7 @@ if __name__ == "__main__":
 #        "question": "How much wood would a woodchuck chuck if a woodchuck could chuck wood?",
 #        "answer": "All the wood that a woodchuck could chuck if a woodchuck could chuck wood."
 #    }
-
+#
 #    add_length = RunnablePassthrough.assign(length=len)
 #    print(type(add_length))
 #    print(add_length.invoke(my_dict))
@@ -82,6 +82,6 @@ if __name__ == "__main__":
 #    print("The answer:")
 #    print(result["answer"].content)
 
-#    print(answer_and_sources("What is Ryan Calais Cameron's most recent play?"))
+    print(answer_and_sources("What is Ryan Calais Cameron's most recent play?"))
 
     pass

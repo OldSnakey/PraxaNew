@@ -1,8 +1,8 @@
 from langchain_community.chat_models import ChatOpenAI
 from typing import Optional, Any
 import os
-
-os.environ["OPENROUTER_API_KEY"] = "<your key here>"
+from dotenv import load_dotenv
+load_dotenv()
 
 class ChatModel(ChatOpenAI):
     """
@@ -22,7 +22,7 @@ class ChatModel(ChatOpenAI):
             **kwargs
         )
 
-def get_model(model_name: str = "google/gemma-4-31b-it:free") -> ChatModel:
+def get_model(model_name: str = "google/gemma-4-26b-a4b-it") -> ChatModel:
     """
     Gets a reference to a model
     
@@ -39,14 +39,14 @@ def get_model(model_name: str = "google/gemma-4-31b-it:free") -> ChatModel:
 
 if __name__ == "__main__":
 # when run as a script, run some tests to demonstrate capabilities
-#    model = get_model()
+    model = get_model()
 #    from langchain_core.messages import HumanMessage, SystemMessage
-#    from langchain.prompts import ChatPromptTemplate
+    from langchain.prompts import ChatPromptTemplate
 
-#    prompt_template = ChatPromptTemplate([
-#        ("system", "You are a helpful assistant."),
-#        ("human", "What is {playwright}'s most recent play?")
-#    ])
+    prompt_template = ChatPromptTemplate([
+        ("system", "You are a helpful assistant."),
+        ("human", "What is {playwright}'s most recent play?")
+    ])
 
 #    response = model.invoke(
 #        [SystemMessage("You are a helpful assistant."),
@@ -67,8 +67,8 @@ if __name__ == "__main__":
 #    response = model.invoke(prompt_template.invoke({"playwright": "Ryan Calais Cameron"}))
 #    print(response.content)
 
-#    chain = prompt_template | model
-#    response = chain.invoke({"playwright": "Ryan Calais Cameron"})
-#    print(response.content)
+    chain = prompt_template | model
+    response = chain.invoke({"playwright": "Ryan Calais Cameron"})
+    print(response.content)
 
     pass
